@@ -8,9 +8,10 @@ client = docker.from_env()
 CONTAINER_NAME = "web"
 client.images.build(tag=CONTAINER_NAME, path='./', dockerfile='./Dockerfile')
 
-rc = subprocess.call("docker ps")
+client.containers.run('web')
 
-print("Docker images: ")
-rc3 = subprocess.call("docker images")
+client.containers.create('web', detach=True)
+
+client.containers.list()
 
 
