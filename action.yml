@@ -1,0 +1,13 @@
+name: 'Check changelog comments'
+description: 'Automatically check changelog comments'
+inputs:
+  repository:
+    description: 'Repository name'
+    required: true
+    default: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.repository }}
