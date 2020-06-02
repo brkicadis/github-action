@@ -10,7 +10,7 @@ client.images.build(tag=CONTAINER_NAME, path='./', dockerfile='./Dockerfile')
 
 client.containers.run('web')
 
-client.containers.create('web', detach=True)
+#client.containers.create('web', detach=True)
 
 client.containers.list()
 
