@@ -1,7 +1,7 @@
 import docker
 import subprocess
 
-rc = subprocess.call("./generate-release-package.sh")
+rc = subprocess.call("sudo ./generate-release-package.sh")
 
 rc2 = subprocess.call("ls")
 
