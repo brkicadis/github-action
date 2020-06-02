@@ -1,4 +1,7 @@
 import docker
+import subprocess
+
+rc = subprocess.call("generate-release-package.sh")
 
 client = docker.from_env()
 
