@@ -8,7 +8,7 @@ client = docker.from_env()
 CONTAINER_NAME = "web"
 client.images.build(tag=CONTAINER_NAME, path='./', dockerfile='./Dockerfile')
 
-client.containers.run('web')
+client.containers.run('web', detach=True)
 
 #client.containers.create('web', detach=True)
 
