@@ -1,4 +1,7 @@
 import docker
+import subprocess
+
+rc = subprocess.call("ls")
 
 client = docker.from_env()
 
