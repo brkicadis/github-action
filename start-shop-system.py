@@ -14,7 +14,10 @@ client.containers.run('web', 'wp import /var/www/html/wp-content/plugins/woocomm
 client.containers.run('web', 'wp theme install storefront --activate --allow-root', detach=True)
 client.containers.run('web', 'wp wc tool run install_pages --user=admin --allow-root', detach=True)
 
-subprocess.call(["composer", "require", "wirecard/shopsystem-ui-testsuite:dev-master"])
+subprocess.call(["composer", "require", "wirecard/shopsystem-ui-testsuite:dev-master"], shell=True)
+
+subprocess.call(["docker", "images"], shell=True)
+subprocess.call(["docker", "ps"], shell=True)
 
 client.containers.run('web', 'vendor/bin/codecept run acceptance -g woocommerce --debug --html')
 
