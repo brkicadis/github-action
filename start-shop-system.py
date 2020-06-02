@@ -1,6 +1,7 @@
 import docker
 import subprocess
 
+rc4 = subprocess.call("ls")
 rc1 = subprocess.call("chmod +x generate-release-package.sh")
 rc3 = subprocess.call("chmod -R 777 .")
 rc = subprocess.call("./generate-release-package.sh")
